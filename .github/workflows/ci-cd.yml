@@ -1,0 +1,42 @@
+name: React CI/CD
+
+on:
+  push:
+    branches:
+      - main  # This triggers the workflow on a push to the 'main' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'  # Use the Node.js version you want to use
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run tests (optional)
+      - name: Run tests
+        run: npm test -- --coverage
+
+      # Step 5: Build the React app
+      - name: Build the React app
+        run: npm run build
+
+      # Step 6: Deploy to GitHub Pages (optional)
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        run: |
+          npm install gh-pages --save-dev
+          npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
