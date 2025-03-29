@@ -29,7 +29,11 @@
 }
 
 .animate_scan{
-  animation: scan 5s linear 100ms 3 alternate both;
+  animation: scan 6s linear 100ms 1 alternate both;
+}
+
+.animate_show{
+  animation: show 6s linear 100ms 1 alternate both;
 }
 
 @keyframes scan {
@@ -37,18 +41,24 @@
     transform: translateY(0px);
   }
   to {
-    backdrop-filter: blur(4px);
     transform: translateY(100%);
+  }
+}
+
+@keyframes show {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 100%;
   }
 }
 
 @keyframes typing {
   from {
     max-width: 0ch;
-    /* color: blue; */
   }
   to {
     max-width: 20ch;
-    /* color: red; */
   }
 }

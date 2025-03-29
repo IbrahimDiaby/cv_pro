@@ -145,17 +145,19 @@ const About = () => {
               </div>
             </section>
           </div>
-          <div className="flex relative min-w-1/4 order-1 lg:order-none overflow-y-hidden">
-            <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan lg:h-170 w-full">
-                  <div className=" h-1 w-full bg-sky-400 dark:bg-red-400"></div>
-                  <div className="bg-white backdrop-blur-sm h-full w-full"></div>
+          <div className="flex relative min-w-1/4 order-1 lg:order-none vh-90 lg:h-170 overflow-y-hidden">
+            <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan h-full w-full">
+                  <div className="h-1 w-full bg-sky-400 dark:bg-red-400"></div>
+                  <div className="bg-transparent h-full w-full"></div>
             </div>
-            <img
-              className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:size-170"
-              src="/assets/images/p-2.png"
-              alt=""
-              srcSet="/assets/images/p-2.png"
-            />
+            <div className="animate_show overflow-y-hidden">
+              <img
+                className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170"
+                src="/assets/images/p-2.png"
+                alt=""
+                srcSet="/assets/images/p-2.png"
+              />
+            </div>
           </div>
         </div>
       </section>
