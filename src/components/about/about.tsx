@@ -96,10 +96,10 @@ const About = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="flex lg:px-4 flex-col order-2 lg:order-none">
             <h1 className="font-bold text-center lg:text-start mb-2 uppercase text-4xl lg:text-8xl">
-              Ibrahim DIABY
+              <span className="animate-typing">Ibrahim DIABY</span>
             </h1>
             <h3 className="font-bold text-center lg:text-start mb-2 uppercase text-sky-400 dark:text-red-400 text-2xl lg:text-4xl">
-              Développeur Full-Stack
+              <span className="animate-wiggle">Développeur Full-Stack</span>
             </h3>
             <div className="flex flex-col gap-y-4">
               <p className="text-pretty">
@@ -145,7 +145,11 @@ const About = () => {
               </div>
             </section>
           </div>
-          <div className="flex min-w-1/4 order-1 lg:order-none">
+          <div className="flex relative min-w-1/4 order-1 lg:order-none overflow-y-hidden">
+            <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan lg:h-170 w-full">
+                  <div className=" h-1 w-full bg-sky-400 dark:bg-red-400"></div>
+                  <div className="bg-white backdrop-blur-sm h-full w-full"></div>
+            </div>
             <img
               className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:size-170"
               src="/assets/images/p-2.png"

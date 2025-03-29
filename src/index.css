@@ -1,4 +1,6 @@
+@tailwind utilities;
 @import "tailwindcss";
+/* @import "@tailwindcss/preflight"; */
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -19,5 +21,34 @@
   :root {
     color: #213547;
     background-color: #ffffff;
+  }
+}
+
+.typing{
+  animation: typing 4s steps(20) 100ms infinite alternate both;
+}
+
+.animate_scan{
+  animation: scan 5s linear 100ms 3 alternate both;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    backdrop-filter: blur(4px);
+    transform: translateY(100%);
+  }
+}
+
+@keyframes typing {
+  from {
+    max-width: 0ch;
+    /* color: blue; */
+  }
+  to {
+    max-width: 20ch;
+    /* color: red; */
   }
 }

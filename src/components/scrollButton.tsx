@@ -21,9 +21,9 @@ const ScrollButton = ({refHeader, refFooter}:{refHeader: React.RefObject<HTMLDiv
                 () => {refFooter.current?.scrollIntoView({
                     behavior: "smooth"
                 }) }
-            } className="flex z-100 p-2 cursor-pointer fixed bottom-8 right-6 rounded-full border-2">
-                {!isDown && <ArrowDown />}
-                {isDown && <ArrowUp /> }
+            } className="flex z-100 p-2 cursor-pointer fixed bottom-8 right-6 rounded-full border-2 text-sky-400 dark:text-red-400">
+                {!isDown && <ArrowDown className="fill-sky-400 dark:fill-red-400" />}
+                {isDown && <ArrowUp className="fill-sky-400 dark:fill-red-400" /> }
             </div>
         </>
     )

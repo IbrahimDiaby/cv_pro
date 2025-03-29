@@ -1,30 +1,38 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { nanoid } from "nanoid";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { basename, verify } from "../../utils/utilities";
 import NoticationCard from "../notification/card-notify";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 const ContactMe = () => {
-  // const env = import.meta.env;
-  // const formRef = useRef<HTMLFormElement || string>("");
 
-  // const sendEmail = async (e : React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
+  const env = import.meta.env;
+  const formRef = useRef<HTMLFormElement>(null);
 
-  //   emailjs
-  //     .sendForm(env.EMAILJS_SERVICE_ID, env.EMAILJS_TEMPLATE_ID, formRef!.current, {
-  //       publicKey: env.EMAILJS_API,
-  //     })
-  //     .then(
-  //       () => {
-  //         console.log("SUCCESS!");
-  //       },
-  //       (error) => {
-  //         console.log("FAILED...", error.text);
-  //       }
-  //     );
-  // };
+  const templateParams = {
+    from_name: '',
+    to_name: '',
+    message: '',
+    reply_to: '',
+  };
+
+  const sendEmail = async (e : React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    templateParams["from_name"] = `${lastname} ${firstname}`;
+    templateParams["to_name"] = "Developer";
+    templateParams["message"] = `Subject : ${subject}\nMessage: ${message}\nTel: ${tel}\n`;
+    templateParams["reply_to"] = email;
+
+    emailjs.init(env.EMAILJS_API);
+    emailjs.send(env.EMAILJS_SERVICE_ID, env.EMAILJS_TEMPLATE_ID, templateParams)
+    .then((response) => {
+      console.log('SUCCESS!', response);
+    }, (error) => {
+      console.log('FAILED...', error);
+    });
+  };
 
   const [response, setResponse] = useState({});
   const [send, setSend] = useState(false);
@@ -58,6 +66,7 @@ const ContactMe = () => {
     e.preventDefault();
     e.stopPropagation();
     setIsPending(true);
+    sendEmail(e);
 
     const HeadersConfig = new Headers({
       "X-Custom-Header": "ProcessThisImmediately",
@@ -140,7 +149,7 @@ const ContactMe = () => {
       {send && <NoticationCard type={"success"} message={"Message envoyé"} />}
       <div className="flex flex-col min-h-screen justify-center items-center ">
         <form
-          // ref={formRef}
+          ref={formRef}
           onSubmit={(e) => {
             submitHandler(e);
           }}

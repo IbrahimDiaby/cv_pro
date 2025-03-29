@@ -1,26 +1,34 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       keyframes: {
-        fromTop: { to: { top: 0, opacity: 0 } },
-        toTop: { to: { top: -100, } },
-        fromBottom: { to: { bottom: 0, } },
-        toBottom: { to: { top: -100, } },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        typing: {
+          "0%": { color: "yellow", maxWidth: "0px", overflow: "hidden" },
+          "100%": { color: "green", maxWidth: "200px" },
+        },
       },
       animation: {
-        fromTop: 'fromTop 2s linear 1',
-        toTop: 'toTop 2s linear 1',
-        fromBottom: 'fromBottom 2s linear 1',
-        toBottom: 'toBottom 2s linear 1',
+        fadeIn: "fadeIn 1s ease-in-out",
+        wiggle: "wiggle 1s ease-in-out infinite",
+        typing: "typing 4s steps(20) 100ms infinite alternate both",
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
