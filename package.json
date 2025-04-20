@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://ibrahimdiaby.github.io/cv_pro",
-
   "scripts": {
     "dev": "vite",
     "test": "react-scripts test",
@@ -31,6 +30,7 @@
     "react-dom": "^19.0.0",
     "react-feather": "^2.0.10",
     "react-router-dom": "^7.3.0",
+    "react-scripts": "^5.0.1",
     "uuid": "^11.1.0",
     "vite-plugin-ssr": "^0.4.85"
   },

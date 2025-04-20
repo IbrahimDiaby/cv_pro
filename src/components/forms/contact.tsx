@@ -1,7 +1,7 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { nanoid } from "nanoid";
 import { useState, useEffect, useRef } from "react";
-import { basename, verify } from "../../utils/utilities";
+// import { basename, verify } from "../../utils/utilities";
 import NoticationCard from "../notification/card-notify";
 import emailjs from "@emailjs/browser";
 
@@ -22,11 +22,11 @@ const ContactMe = () => {
 
     templateParams["from_name"] = `${lastname} ${firstname}`;
     templateParams["to_name"] = "Developer";
-    templateParams["message"] = `Subject : ${subject}\nMessage: ${message}\nTel: ${tel}\n`;
+    templateParams["message"] = `Subject : ${subject}\nFrom: ${lastname} + " " + ${firstname}\nEmail: ${email}\nTel: ${tel}\n\nMessage: ${message}\n`;
     templateParams["reply_to"] = email;
 
-    emailjs.init(env.EMAILJS_API);
-    emailjs.send(env.EMAILJS_SERVICE_ID, env.EMAILJS_TEMPLATE_ID, templateParams)
+    emailjs.init(env.REACT_EMAILJS_API || "HWcKJj7c4CouOd_Yy" );
+    emailjs.send(env.REACT_EMAILJS_SERVICE_ID || "Portfolio" , env.REACT_EMAILJS_TEMPLATE_ID || "template_7vo1l7f" , templateParams)
     .then((response) => {
       console.log('SUCCESS!', response);
     }, (error) => {
@@ -34,7 +34,7 @@ const ContactMe = () => {
     });
   };
 
-  const [response, setResponse] = useState({});
+  // const [response, setResponse] = useState({});
   const [send, setSend] = useState(false);
   const [isPending, setIsPending] = useState(false);
   const [lastname, setLastname] = useState("");
@@ -68,50 +68,50 @@ const ContactMe = () => {
     setIsPending(true);
     sendEmail(e);
 
-    const HeadersConfig = new Headers({
-      "X-Custom-Header": "ProcessThisImmediately",
-      "Content-Type": "application/json",
-    });
+    // const HeadersConfig = new Headers({
+    //   "X-Custom-Header": "ProcessThisImmediately",
+    //   "Content-Type": "application/json",
+    // });
 
-    const data = {
-      firstname: verify(firstname),
-      lastname: verify(lastname),
-      email: verify(email),
-      tel: verify(tel),
-      subject: verify(subject),
-      message: verify(message),
-    };
+    // const data = {
+    //   firstname: verify(firstname),
+    //   lastname: verify(lastname),
+    //   email: verify(email),
+    //   tel: verify(tel),
+    //   subject: verify(subject),
+    //   message: verify(message),
+    // };
 
-    try {
-      const res = await fetch(`${basename}/assets/scripts/php/send.php`, {
-        method: "POST",
-        headers: HeadersConfig,
-        mode: "cors",
-        cache: "no-cache",
-        credentials: "same-origin",
-        body: JSON.stringify(data),
-      });
+    // try {
+    //   const res = await fetch(`${basename}/assets/scripts/php/send.php`, {
+    //     method: "POST",
+    //     headers: HeadersConfig,
+    //     mode: "cors",
+    //     cache: "no-cache",
+    //     credentials: "same-origin",
+    //     body: JSON.stringify(data),
+    //   });
 
-      if (!res.ok) {
-        throw new Error("Failed to fetch, status: " + res.status);
-      }
+    //   if (!res.ok) {
+    //     throw new Error("Failed to fetch, status: " + res.status);
+    //   }
 
-      const responseData = await res.json();
-      setResponse(responseData);
-      setSend(
-        responseData["type" as keyof typeof responseData] === "success"
-          ? true
-          : false
-      );
-      setIsPending(false);
+    //   const responseData = await res.json();
+    //   setResponse(responseData);
+    //   setSend(
+    //     responseData["type" as keyof typeof responseData] === "success"
+    //       ? true
+    //       : false
+    //   );
+    //   setIsPending(false);
 
-      console.log("==> ", responseData);
-      console.log(response["status" as keyof typeof response]);
-      console.log(response["message" as keyof typeof response]);
-      console.log(response["type" as keyof typeof response]);
-    } catch (e) {
-      console.error(e);
-    }
+    //   console.log("==> ", responseData);
+    //   console.log(response["status" as keyof typeof response]);
+    //   console.log(response["message" as keyof typeof response]);
+    //   console.log(response["type" as keyof typeof response]);
+    // } catch (e) {
+    //   console.error(e);
+    // }
   };
 
   const subjects = [
