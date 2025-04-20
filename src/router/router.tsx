@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import NotFound from "../pages/notfound";
 import Soon from "../components/soon";
 import DefaultLayout from "../layouts/defaultLayout";
@@ -8,7 +8,8 @@ import Maintenance from "../components/maintenance/maintenance";
 const Core = () => {
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
+      <HashRouter>
         <Routes>
           <Route
             path="/"
@@ -34,7 +35,8 @@ const Core = () => {
             ></Route>
           <Route path="*" element={<NotFound />} errorElement={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
+      {/* </BrowserRouter> */}
     </>
   );
 };

@@ -26,15 +26,27 @@ const validateUsername = (username : string) => {
 }
 
 const basename =
-    window.location.host === "unes-idf.fr" ||
-    window.location.host === "www.unes-idf.fr"
+    window.location.host === "https://ibrahimdiaby.github.io" ||
+    window.location.host === "ibrahimdiaby.github.io"
     ? window.location.origin
     : "http://localhost:5173";
 
-const membersPath = "/assets/images/members";
-const carouselPath = "/assets/images/";
-const imagePath = "/assets/images/";
-// const imageProjectsPath = "/assets/images/projects";
+const membersPath = window.location.host === "https://ibrahimdiaby.github.io" ||
+window.location.host === "ibrahimdiaby.github.io"
+? "/CV/assets/images/members" : "/assets/images/members" ;
+
+const carouselPath = window.location.host === "https://ibrahimdiaby.github.io" ||
+window.location.host === "ibrahimdiaby.github.io"
+? "/CV/assets/images/" : "/assets/images/";
+
+const imagePath = window.location.host === "https://ibrahimdiaby.github.io" ||
+window.location.host === "ibrahimdiaby.github.io"
+? "/CV/assets/images/" : "/assets/images/";
+
+const imageProjectsPath = window.location.host === "https://ibrahimdiaby.github.io" ||
+window.location.host === "ibrahimdiaby.github.io"
+? "/CV/assets/images/projects/" : "/assets/images/projects/";
+
 // const imageFlagsPath = "/assets/images/flags";
 // const imageProgrammingPath = "/assets/images/programming";
 // const imageSocialPath = "/assets/images/social";
@@ -50,6 +62,7 @@ export {
     validateEmail,
     validateUsername,
     validatePassword,
+    imageProjectsPath
     // imageProjectsPath,
     // imageFlagsPath,
     // imageProgrammingPath,

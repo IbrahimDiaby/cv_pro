@@ -11,6 +11,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
+    "deploy-script": "./deploy.sh",
     "deploy": "gh-pages -d build",
     "to_deploy": "npm run build && cp .env dist/"
   },

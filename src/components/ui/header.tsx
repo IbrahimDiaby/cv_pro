@@ -68,9 +68,8 @@ const Header = ({ref}:{ref: React.RefObject<HTMLDivElement | null>}) => {
                 <li
                   onClick={() => OpenLink(item["url"])}
                   title={item["label"]}
-                  role={"button"}
                   key={nanoid()}
-                  className="flex items-center gap-x-2 list-none  hover:cursor-pointer hover:animate-bounce"
+                  className="flex cursor-pointer items-center gap-x-2 list-none  hover:cursor-pointer hover:animate-bounce"
                 >
                   {item["icon"]}
                 </li>

@@ -9,6 +9,7 @@ import { nanoid } from "nanoid";
 import Card from "../card/card";
 import InfoCard from "../card/info-card";
 import { Globe, Mail, PhoneCall } from "react-feather";
+import { imagePath } from "../../utils/utilities";
 
 const About = () => {
   const infos = [
@@ -153,9 +154,9 @@ const About = () => {
             <div className="animate_show overflow-y-hidden">
               <img
                 className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170"
-                src="/assets/images/p-2.png"
+                src={`${imagePath}/p-2.png`}
                 alt=""
-                srcSet="/assets/images/p-2.png"
+                srcSet={`${imagePath}/p-2.png`}
               />
             </div>
           </div>

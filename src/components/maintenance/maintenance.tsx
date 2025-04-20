@@ -1,11 +1,13 @@
+import { imagePath } from "../../utils/utilities";
+
 const Maintenance = () => {
     return (
         <>
             <div className="flex flex-col justify-center items-center font-bold h-screen w-screen lg:px-4 lg:p-0 ">
-                <div role="button" className="my-8 rounded-md animate-pulse shadow-lg shadow-sky-400 dark:shadow-red-400">
+                <div className="cursor-pointer my-8 rounded-md animate-pulse shadow-lg shadow-sky-400 dark:shadow-red-400">
                     <img
                         className="mix-blend-screen rounded-md size-40"
-                        src="/favicon.png"
+                        src={`${imagePath}/favicon.png`}
                         width={150}
                         height={150}
                         alt={""}
