@@ -1,13 +1,17 @@
-import { Facebook, Instagram, Linkedin, Youtube, GitHub, Inbox } from "react-feather";
+import { Facebook, Instagram, Linkedin, Youtube, GitHub, Inbox, Codesandbox } from "react-feather";
 import { OpenLink } from "../../utils/utilities";
 import { nanoid } from "nanoid";
-// import WhatsApp from "./icons/WhatsApp";
 import TikTok from "./icons/Tiktok";
 import X from "./icons/X";
 import { Link } from "react-router-dom";
 
 const Header = ({ref}:{ref: React.RefObject<HTMLDivElement | null>}) => {
   const social = [
+    {
+      icon: <Codesandbox className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />,
+      label: "Linktree",
+      url: "https://linktr.ee/ID_GEN",
+    },
     {
       icon: <GitHub className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />,
       label: "Github",
@@ -16,42 +20,37 @@ const Header = ({ref}:{ref: React.RefObject<HTMLDivElement | null>}) => {
     {
       icon: <Linkedin className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />,
       label: "LinkedIN",
-      url: "#",
+      url: "https://www.linkedin.com/in/ibrahim-d-023474144",
     },
     {
       icon: <Facebook className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />,
       label: "Facebook",
-      url: "#",
+      url: "https://www.facebook.com/MasterDigitMasterID",
     },
-    // {
-    //     icon: <WhatsApp className='size-6 hover:text-sky-400 hover:dark:text-red-400/20' />,
-    //     label: "WhatsApp",
-    //     url: "#"
-    // },
     {
       icon: <Instagram className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />,
       label: "Instagram",
-      url: "#",
+      url: "https://www.instagram.com/idgen_2k25/#",
     },
     {
       icon: <TikTok className={"size-6 hover:text-sky-400 hover:dark:text-red-400/20 hover:fill-sky-400 hover:dark:fill-red-400/20"} />,
       label: "Tiktok",
-      url: "#",
+      url: "https://www.tiktok.com/@id32946",
     },
     {
       icon: <Youtube className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />,
       label: "Youtube",
-      url: "#",
+      url: "https://www.youtube.com/@Ibrahim_D001",
     },
     {
       icon: <X className={"size-6 hover:text-sky-400 hover:dark:text-red-400/20 hover:fill-sky-400 hover:dark:fill-red-400/20"} />,
       label: "X",
-      url: "#",
+      url: "https://x.com/ID7474662868808",
     },
     {
       icon: <Inbox className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />,
       label: "Mail",
-      url: "#",
+      url: "mailto:ibrahim.diaby707@gmail.com",
     },
   ];
 

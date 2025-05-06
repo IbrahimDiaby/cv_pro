@@ -2,36 +2,71 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { nanoid } from "nanoid";
 import { useState, useEffect, useRef } from "react";
 // import { basename, verify } from "../../utils/utilities";
-import NoticationCard from "../notification/card-notify";
+// import NoticationCard from "../notification/card-notify";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const ContactMe = () => {
-
+  const duration = 3000;
+  const refreshDelay = 100;
   const env = import.meta.env;
   const formRef = useRef<HTMLFormElement>(null);
 
   const templateParams = {
-    from_name: '',
-    to_name: '',
-    message: '',
-    reply_to: '',
+    from_name: "",
+    to_name: "",
+    message: "",
+    reply_to: "",
   };
 
-  const sendEmail = async (e : React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if(isPending) {
+      console.log("Un execution en cours...");
+      return;
+    }
+
+    setIsPending(true);
     templateParams["from_name"] = `${lastname} ${firstname}`;
     templateParams["to_name"] = "Developer";
-    templateParams["message"] = `Subject : ${subject}\nFrom: ${lastname} + " " + ${firstname}\nEmail: ${email}\nTel: ${tel}\n\nMessage: ${message}\n`;
+    templateParams[
+      "message"
+    ] = `Subject : ${subject}\nFrom: ${lastname} ${firstname}\nEmail: ${email}\nTel: ${tel}\n\nMessage: ${message}\n`;
     templateParams["reply_to"] = email;
 
-    emailjs.init(env.REACT_EMAILJS_API || "HWcKJj7c4CouOd_Yy" );
-    emailjs.send(env.REACT_EMAILJS_SERVICE_ID || "Portfolio" , env.REACT_EMAILJS_TEMPLATE_ID || "template_7vo1l7f" , templateParams)
-    .then((response) => {
-      console.log('SUCCESS!', response);
-    }, (error) => {
-      console.log('FAILED...', error);
-    });
+    emailjs.init(env.REACT_EMAILJS_API || "HWcKJj7c4CouOd_Yy");
+    emailjs
+      .send(
+        env.REACT_EMAILJS_SERVICE_ID || "Portfolio",
+        env.REACT_EMAILJS_TEMPLATE_ID || "template_7vo1l7f",
+        templateParams
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS...!", response);
+          toast.success("Message envoyé avec succès.", {
+            duration: duration,
+            style: {
+              background: "#4caf50",
+              color: "#fff",
+            },
+          });
+          setSend(true);
+        },
+        (error) => {
+          console.log("FAILED...!", error);
+          toast.error("Erreur d'envoi du message.", {
+            duration: duration,
+            style: {
+              background: "#ff1150",
+              color: "#fff",
+            },
+          });
+          setSend(false);
+        }
+      );
+      setIsPending(false);
   };
 
   // const [response, setResponse] = useState({});
@@ -58,14 +93,13 @@ const ContactMe = () => {
     if (send) {
       setTimeout(() => {
         reset();
-      }, 2000);
+      }, duration+refreshDelay);
     }
   }, [send]);
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsPending(true);
     sendEmail(e);
 
     // const HeadersConfig = new Headers({
@@ -146,7 +180,7 @@ const ContactMe = () => {
   ];
   return (
     <>
-      {send && <NoticationCard type={"success"} message={"Message envoyé"} />}
+      {/* {send && <NoticationCard type={"success"} message={"Message envoyé"} />} */}
       <div className="flex flex-col min-h-screen justify-center items-center ">
         <form
           ref={formRef}
@@ -162,9 +196,10 @@ const ContactMe = () => {
               Formulaire de contact
             </h1>
             <p>
-              Vous avez des questions ? Je suis heureux de recevoir vos questions, projets ou
-              demandes de devis. Veuillez remplir le formulaire ci-dessous et je vous
-              répondrez dans les plus brefs délais. Vos reves sont à un clic.
+              Vous avez des questions ? Je suis heureux de recevoir vos
+              questions, projets ou demandes de devis. Veuillez remplir le
+              formulaire ci-dessous et je vous répondrez dans les plus brefs
+              délais. Vos reves sont à un clic.
             </p>
           </div>
           <div className="flex flex-col gap-x-4 md:flex-row md:flex-wrap w-full">
@@ -284,7 +319,7 @@ const ContactMe = () => {
             </textarea>
           </div>
 
-          <button disabled={isPending}>
+          <button>
             <div className="flex bg-transparent">
               <div className="flex transition delay-75 duration-700 hover:scale-105 transform shadow-lg hover:shadow-sky-400 dark:hover:shadow-red-400  font-bold gap-x-4 cursor-pointer rounded-md bg-gradient-to-r from-white/40 via-sky-400 to-white/60 dark:from-black/40 dark:via-red-400/50 dark:to-black/60 uppercase ps-4 pe-2 py-4 bg-transparent">
                 <span className="flex items-center">
