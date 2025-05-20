@@ -30,6 +30,17 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "amadoudiaby.png",
+        title: "AMADOU DIABY",
+        role: "Développeur Web Fullstack",
+        description:
+          "Collaborateur sur la conception d'un site web pour une figure publique (politique) du parti Houphouétisme pour l'Efficacité dans la Justice (H.E.J).",
+        technologies: ["Wordpress", "HTML", "CSS", "Javascript", "PHP", "Elementor", "Wordpress Plugin"],
+        url: "https://amadoudiaby.com",
+        tools: ["Filezilla"],
+        type: "web",
+      },
+      {
         image: "unes-idf.png",
         title: "UNES IDF",
         role: "Développeur Web Fullstack",
