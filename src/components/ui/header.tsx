@@ -114,7 +114,7 @@ const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
                 {show && <XMarkIcon className="size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
               </li>
             </div>
-            <div className={clsx("px-8 bg-white dark:bg-neutral-800 items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1", show ? "animate_showMenu lg:animate-none" : "animate_hiddenMenu lg:animate-none")}>
+            <div className={clsx("px-8 bg-white dark:bg-neutral-800 lg:bg-transparent items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1", show ? "animate_showMenu lg:animate-none" : "animate_hiddenMenu lg:animate-none")}>
               {social.map((item) => {
                 return (
                   <li
