@@ -34,10 +34,10 @@ const Projects = () => {
         title: "AMADOU DIABY",
         role: "Développeur Web Fullstack",
         description:
-          "Collaborateur sur la conception d'un site web pour une figure publique (politique) du parti Houphouétisme pour l'Efficacité dans la Justice (H.E.J).",
+          "Collaborateur sur la conception d'un site web pour une figure publique. Monsieur Amadou DIABY - Consultant financier et immobilier.",
         technologies: ["Wordpress", "HTML", "CSS", "Bootstrap", "Javascript", "PHP", "Elementor", "Wordpress Plugins", "Configuration SMTP", "Adobe Illustrator/VectorPea"],
         url: "https://amadoudiaby.com",
-        tools: ["Filezilla"],
+        tools: ["Filezilla", "LWS"],
         type: "web",
       },
       {
