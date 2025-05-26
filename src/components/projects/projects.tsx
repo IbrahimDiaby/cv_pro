@@ -39,6 +39,8 @@ const Projects = () => {
         url: "https://amadoudiaby.com",
         tools: ["Filezilla", "LWS"],
         type: "web",
+        start: "2025",
+        end: "2025",
       },
       {
         image: "unes-idf.png",
@@ -50,6 +52,8 @@ const Projects = () => {
         url: "https://unes-idf.fr",
         tools: ["Filezilla", "IONOS"],
         type: "web",
+        start: "2025",
+        end: "En cours",
       },
       {
         image: "ameetis.png",
@@ -61,6 +65,8 @@ const Projects = () => {
         url: "https://ameetis.fr",
         tools: ["Filezilla", "IONOS"],
         type: "web",
+        start: "2025",
+        end: "En cours",
       },
       {
         image: "aesss.png",
@@ -72,6 +78,35 @@ const Projects = () => {
         tools: ["Filezilla", "IONOS"],
         type: "web",
         url: "https://aess-strasbourg.fr",
+        start: "2024",
+        end: "En cours",
+      },
+      {
+        image: "ongylla.png",
+        title: "ONGYLLA",
+        role: "Développeur Web Fullstack",
+        description:
+          "Maintenance sur le site web d'une ONG dans la lutte contre le cancer du sein.",
+        technologies: ["Wordpress", "HTML", "CSS", "Bootstrap", "Javascript", "PHP", "Elementor", "Wordpress Plugins", "Configuration SMTP"],
+        tools: ["Filezilla"],
+        type: "web",
+        url: "https://ongylla.org",
+        start: "2023",
+        end: "Juin 2024",
+      },
+      {
+        image: "radioylla.png",
+        title: "Radio YLLA",
+        role: "Développeur Mobile Fullstack",
+        description:
+          `Développement d'une application mobile Cross-Plateform pour la web radio: Radio Ylla. PS: L'application 
+          n'est plus maintenue en production.`,
+        technologies: ["Flutter", "Dart",],
+        tools: ["Google Play Console"],
+        type: "mobile",
+        url: "https://radioylla.com",
+        start: "2023",
+        end: "Juin 2024",
       },
     ],
     []

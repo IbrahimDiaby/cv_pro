@@ -29,6 +29,7 @@ const ProjectCard = ({
                     item.technologies.map((tech : string) => <TechCard key={nanoid()} text={tech} />)
                   }
                 </div>
+                <div className="flex py-2 lg:px-4 font-bold text-black dark:text-white items-start self-start">Période : {item.start} - {item.end}</div>
             </div>
           </>
         )}
@@ -44,6 +45,7 @@ const ProjectCard = ({
                     item.technologies.map((tech : string) => <TechCard key={nanoid()} text={tech} />)
                   }
                 </div>
+                <div className="flex py-2 lg:px-4 font-bold text-black dark:text-white items-start self-start">Période : {item.start} - {item.end}</div>
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-2 hidden lg:flex size-4 bg-black dark:bg-white rounded-full"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-2 hidden lg:flex my-2 w-1/6 h-0.5 bg-black dark:bg-white"></div>

@@ -7,6 +7,8 @@ interface ProjectInterface {
     description: string;
     tools:  array<string>,
     type: string;
+    start: string;
+    end: string;
 }
 
 export {
