@@ -97,9 +97,10 @@ const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
     <>
       <header ref={ref} className="flex h-24 w-screen shadow-md">
         <nav className="p-6 flex w-full justify-between">
-          <div className="text-4xl uppercase font-bold">
-            <Link role={"button"} to={"/"}>
-              <span className="">ID</span>
+          <div className="hover:scale-105 transition delay-75 duration-300 text-4xl uppercase font-bold">
+            <Link className={"flex flex-col"} role={"button"} to={"/"}>
+              <span className="">ALCHIMID - AID</span>
+              <span className="text-sm">Let's receipt your unique <span className="text-sky-400 dark:text-red-400">&infin;</span> elixir</span>
             </Link>
           </div>
           <div className="flex flex-1 gap-x-2 items-center justify-end">
@@ -114,7 +115,7 @@ const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
                 {show && <XMarkIcon className="size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
               </li>
             </div>
-            <div className={clsx("px-8 bg-white dark:bg-neutral-800 lg:bg-transparent items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1", show ? "animate_showMenu lg:animate-none" : "animate_hiddenMenu lg:animate-none")}>
+            <div className={clsx("px-8 bg-white dark:bg-neutral-800 lg:bg-transparent dark:lg:bg-transparent items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1", show ? "animate_showMenu lg:animate-none" : "animate_hiddenMenu lg:animate-none")}>
               {social.map((item) => {
                 return (
                   <li

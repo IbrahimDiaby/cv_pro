@@ -1,5 +1,4 @@
 const Footer = ({ref}:{ref: React.RefObject<HTMLDivElement | null>}) => {
-    console.log(ref.current?.scrollTop);
     return (
         <>
         <footer ref={ref} className="flex mt-2 py-4 font-bold min-h-20 justify-center items-center shadow-lg shadow-black dark:shadow-white">
