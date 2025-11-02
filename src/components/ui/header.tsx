@@ -18,7 +18,7 @@ import { forwardRef, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
 // const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
-const Header = forwardRef<HTMLDivElement>((props, ref) => {
+const Header = forwardRef<HTMLDivElement>((_props, ref) => {
   const social = [
     {
       icon: (
