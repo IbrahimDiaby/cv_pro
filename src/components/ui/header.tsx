@@ -14,10 +14,11 @@ import Linktree from "./icons/Linktree";
 import X from "./icons/X";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 
-const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
+// const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
+const Header = forwardRef<HTMLDivElement>((props, ref) => {
   const social = [
     {
       icon: (
@@ -134,6 +135,6 @@ const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
       </header>
     </>
   );
-};
+});
 
 export default Header;

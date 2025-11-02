@@ -95,7 +95,7 @@ const About = () => {
     <>
       <section className="flex flex-col lg:flex-row px-10 py-4 w-full min-h-screen">
         <div className="flex flex-col lg:flex-row">
-          <div className="flex lg:px-4 flex-col order-2 lg:order-none">
+          <div className="flex lg:px-4 flex-col order-2 lg:order-0">
             <h1 className="font-bold text-center lg:text-start mb-2 uppercase text-4xl lg:text-8xl">
               <span className="animate-typing">Ibrahim DIABY</span>
             </h1>
@@ -146,14 +146,14 @@ const About = () => {
               </div>
             </section>
           </div>
-          <div className="flex relative min-w-1/4 order-1 lg:order-none vh-90 lg:h-170 overflow-y-hidden">
+          <div className="flex relative min-w-1/4 order-1 lg:order-0 vh-90 lg:h-170 overflow-y-hidden">
             <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan h-full w-full">
                   <div className="h-1 w-full bg-sky-400 dark:bg-red-400"></div>
                   <div className="bg-transparent h-full w-full"></div>
             </div>
             <div className="animate_show overflow-y-hidden">
               <img
-                className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170"
+                className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square"
                 src={`${imagePath}/p-2.png`}
                 alt=""
                 srcSet={`${imagePath}/p-2.png`}
