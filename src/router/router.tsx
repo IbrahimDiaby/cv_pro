@@ -10,31 +10,35 @@ const Core = () => {
     <>
       {/* <BrowserRouter> */}
       <HashRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<DefaultLayout />}
-            errorElement={<NotFound />}
-          >
+          <Routes>
             <Route
-              index
               path="/"
-              element={<Home />}
+              element={<DefaultLayout />}
               errorElement={<NotFound />}
-            ></Route>
+            >
+              <Route
+                index
+                path="/"
+                element={<Home />}
+                errorElement={<NotFound />}
+              />
+              <Route
+                path="/coming"
+                element={<Soon />}
+                errorElement={<NotFound />}
+              />
+            </Route>
             <Route
-              path="/coming"
-              element={<Soon />}
-              errorElement={<NotFound />}
-            ></Route>
-          </Route>
-          <Route
               path="/maintenance"
               element={<Maintenance />}
               errorElement={<NotFound />}
-            ></Route>
-          <Route path="*" element={<NotFound />} errorElement={<NotFound />} />
-        </Routes>
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
+              errorElement={<NotFound />}
+            />
+          </Routes>
       </HashRouter>
       {/* </BrowserRouter> */}
     </>

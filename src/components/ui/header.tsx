@@ -16,13 +16,14 @@ import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { forwardRef, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { useTheme } from "../../context/themeContext";
 
 // const Header = ({ ref }: { ref: React.RefObject<HTMLDivElement | null> }) => {
 const Header = forwardRef<HTMLDivElement>((_props, ref) => {
   const social = [
     {
       icon: (
-        <Linktree className="size-6 hover:text-sky-400 hover:dark:text-red-400/20" />
+        <Linktree className="size-6 hover:text-sky-400 hover:fill-sky-400 hover:dark:text-red-400/20" />
       ),
       label: "Linktree",
       url: "https://linktr.ee/ID_GEN",
@@ -93,30 +94,33 @@ const Header = forwardRef<HTMLDivElement>((_props, ref) => {
     },
   ];
 
-  const [show, setShow] = useState(false);
+  const [visibility, setVisibility] = useState("init"); // init, show, hide
+
+  const {theme} = useTheme();
+  
   return (
     <>
-      <header ref={ref} className="flex h-24 w-screen shadow-md">
+      <header ref={ref} className={clsx("flex h-24 w-screen shadow-md", theme === "light" ? "bg-white shadow-gray-300" : "dark:bg-gray-900 dark:shadow-gray-300")}>
         <nav className="p-6 flex w-full justify-between">
           <div className="hover:scale-105 transition delay-75 duration-300 text-4xl uppercase font-bold">
             <Link className={"flex flex-col"} role={"button"} to={"/"}>
-              <span className="">ALCHIMID - AID</span>
+              <span className="text-sm lg:text-3xl">ALCHIMID - AID</span>
               <span className="text-sm">Let's receipt your unique <span className="text-sky-400 dark:text-red-400">&infin;</span> elixir</span>
             </Link>
           </div>
           <div className="flex flex-1 gap-x-2 items-center justify-end">
             <div className="flex lg:hidden items-end">
               <li
-                onClick={() => setShow(!show)}
+                onClick={() => setVisibility((visibility === "init") ? "show" : (visibility === "show") ? "hide" : "show")}
                 title={"menu"}
                 key={nanoid()}
                 className="flex cursor-pointer items-center gap-x-2 list-none hover:animate-bounce"
               >
-                {!show && <Menu className="size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
-                {show && <XMarkIcon className="size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
+                {((visibility === "hide") || (visibility === "init"))&& <Menu className="flex lg:hidden size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
+                {visibility === "show" && <XMarkIcon className="flex lg:hidden size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
               </li>
             </div>
-            <div className={clsx("px-8 bg-white dark:bg-neutral-800 lg:bg-transparent dark:lg:bg-transparent items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1", show ? "animate_showMenu lg:animate-none" : "animate_hiddenMenu lg:animate-none")}>
+            <div className={clsx(`px-8 items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1`, theme === "light" ? "bg-white lg:bg-transparent" : "dark:bg-gray-900 dark:lg:bg-transparent", visibility === "show" ? "animate_showMenu lg:animate-none" : (visibility === "hide") ? "animate_hiddenMenu lg:animate-none" : "transform -translate-y-[150%] lg:translate-none")}>
               {social.map((item) => {
                 return (
                   <li

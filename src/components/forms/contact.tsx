@@ -5,12 +5,14 @@ import { useState, useEffect, useRef } from "react";
 // import NoticationCard from "../notification/card-notify";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+// import { useTheme } from "../../context/themeContext";
 
 const ContactMe = () => {
   const duration = 3000;
   const refreshDelay = 100;
   const env = import.meta.env;
   const formRef = useRef<HTMLFormElement>(null);
+  // const {theme} = useTheme();
 
   const templateParams = {
     from_name: "",
@@ -181,13 +183,13 @@ const ContactMe = () => {
   return (
     <>
       {/* {send && <NoticationCard type={"success"} message={"Message envoyé"} />} */}
-      <div className="flex flex-col min-h-screen justify-center items-center ">
+      <div className="flex flex-col min-h-screen justify-center items-center text-black dark:text-white">
         <form
           ref={formRef}
           onSubmit={(e) => {
             submitHandler(e);
           }}
-          className="flex flex-col w-full lg:w-1/2 px-10 rounded-md justify-center items-center gap-4"
+          className="flex flex-col w-full lg:w-1/2 px-10 rounded-md justify-center items-center gap-4 text-black dark:text-white"
           action=""
           method="post"
         >

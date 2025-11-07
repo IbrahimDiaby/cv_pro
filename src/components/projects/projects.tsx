@@ -49,7 +49,7 @@ const Projects = () => {
         tools: [],
         type: "web",
         start: "2025",
-        end: "En cours",
+        end: "2025",
       },
       {
         image: "amadoudiaby.png",
@@ -93,7 +93,7 @@ const Projects = () => {
         tools: ["Filezilla", "IONOS"],
         type: "web",
         start: "2025",
-        end: "En cours",
+        end: "2025",
       },
       {
         image: "ameetis.png",
@@ -113,7 +113,7 @@ const Projects = () => {
         tools: ["Filezilla", "IONOS"],
         type: "web",
         start: "2025",
-        end: "En cours",
+        end: "2025",
       },
       {
         image: "aesss.png",
@@ -133,7 +133,7 @@ const Projects = () => {
         type: "web",
         url: "https://aess-strasbourg.fr",
         start: "2024",
-        end: "En cours",
+        end: "2025",
       },
       {
         image: "ongylla.png",
@@ -219,7 +219,7 @@ const Projects = () => {
 
   return (
     <>
-      <section className="flex flex-col">
+      <section className="flex flex-col text-black dark:text-white">
         <div className="py-4 flex flex-col items-center justify-center">
           <h1 className="font-bold uppercase text-4xl lg:text-6xl">Projets</h1>
           <div className="flex w-full justify-center flex-wrap px-10 py-3 gap-2 gap-y-6">
