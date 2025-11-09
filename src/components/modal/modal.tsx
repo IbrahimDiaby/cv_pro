@@ -1,5 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ReactNode } from "react";
+import { useTheme } from "../../context/themeContext";
+import clsx from "clsx";
 // import { JSX } from "react";
 
 const Modal = ({
@@ -12,9 +14,13 @@ const Modal = ({
   children : ReactNode
 }) => {
 
+  const {theme} = useTheme();
+
   return (
     <>
-      <div className="flex w-full flex-col min-h-screen justify-center items-center pt-8">
+      <div className={clsx("flex w-full flex-col min-h-screen justify-center items-center pt-8", 
+        theme === "light" ? "bg-white text-black" : "dark:bg-gray-900 dark:text-white")
+      }>
         <div className="flex justify-end absolute top-0 right-5"
           onClick={(e) => {
             e.stopPropagation();

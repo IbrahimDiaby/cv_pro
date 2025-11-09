@@ -37,9 +37,9 @@ const Pagination = ({
           {page > 1 && (
             <div
               onClick={() => setPage(page - 1)}
-              className="next transition delay-75 duration-1000 transform hover:scale-105 cursor-pointer hover:text-orange-400"
+              className={clsx("next transition delay-75 duration-1000 transform hover:scale-105 cursor-pointer", theme === "light" ? "hover:text-orange-400" : "dark:hover:text-orange-400 hover:text-orange-400")}
             >
-              <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white")}>
+              <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "bg-red-400 text-white dark:bg-red-400 dark:text-white")}>
                 Précédent
               </Button>
             </div>
@@ -51,7 +51,7 @@ const Pagination = ({
               <div className="" key={nanoid()} onClick={() => setPage(item)}>
                 <Button
                   key={nanoid()}
-                  className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white")}
+                  className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "bg-red-400 text-white dark:bg-red-400 dark:text-white")}
                 >
                   {item}
                 </Button>
@@ -60,17 +60,17 @@ const Pagination = ({
           }
         )}
         {page > 3 && maxPage > 3 && (
-          <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white")}>
+          <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "bg-red-400 text-white dark:bg-red-400 dark:text-white")}>
             ...
           </Button>
         )}
         {page > 2 && (page == 3 || page <= maxPage - 2) && (
-          <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white")}>
+          <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white bg-red-400 text-white")}>
             {page}
           </Button>
         )}
         {maxPage > 3 && page < maxPage - 2 && (
-          <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white")}>
+          <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white bg-red-400 text-white")}>
             ...
           </Button>
         )}
@@ -80,7 +80,7 @@ const Pagination = ({
               <div className="" onClick={() => setPage(item)}>
                 <Button
                   key={nanoid()}
-                  className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white")}
+                  className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white bg-red-400 text-white")}
                 >
                   {item}
                 </Button>
@@ -91,9 +91,9 @@ const Pagination = ({
           {page < maxPage && (
             <div
               onClick={() => setPage(page + 1)}
-              className={clsx("next transition delay-75 duration-1000 transform hover:scale-105 cursor-pointer", theme === "light" ? "bg-sky-400 text-white hover:text-orange-400" : "dark:bg-red-400 dark:text-white dark:hover:text-orange-400")}
+              className={clsx("next transition delay-75 duration-1000 transform hover:scale-105 cursor-pointer", theme === "light" ? "bg-sky-400 text-white hover:text-orange-400" : "bg-red-400 text-white hover:text-orange-400 dark:bg-red-400 dark:text-white dark:hover:text-orange-400")}
             >
-              <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "dark:bg-red-400 dark:text-white")}>
+              <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400", theme === "light" ? "bg-sky-400 text-white" : "bg-red-400 text-white dark:bg-red-400 dark:text-white")}>
                 Suivant
               </Button>
             </div>
@@ -108,7 +108,7 @@ const Pagination = ({
           onChange={(e) => setTmpPage(parseInt(e.target.value))}
         />
         <div className="" onClick={() => setPage(tmpPage)}>
-          <Button className="transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm bg-sky-400 dark:bg-red-400 shadow-md shadow-slate-400">
+          <Button className={clsx("transition delay-75 duration-300 hover:scale-105 font-bold px-4 py-2 cursor-pointer rounded-sm shadow-md shadow-slate-400",  theme === "light" ? "bg-sky-400" : "bg-red-400 dark:bg-red-400")}>
             OK
           </Button>
         </div>

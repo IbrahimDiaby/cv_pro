@@ -7,7 +7,7 @@ import { useTheme } from "../context/themeContext";
 const Home = () => {
     const {theme} = useTheme()
     return (
-        <section className={clsx("flex flex-col w-screen min-h-screen", theme === "light" ? "bg-white" : "bg-gray-900")}>
+        <section className={clsx("flex flex-col w-screen min-h-screen", theme === "light" ? "bg-white" : "bg-gray-900 dark:bg-gray-900")}>
             <About />
             <Projects />
             <ContactMe />

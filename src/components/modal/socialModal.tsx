@@ -1,5 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import ErrorMsg from "../ui/errors";
+import { useTheme } from "../../context/themeContext";
+import clsx from "clsx";
 
 const SocialHandlerModal = ({
   ref,
@@ -13,6 +15,8 @@ const SocialHandlerModal = ({
     setModal(false);
   }, 4000);
 
+  const {theme} = useTheme();
+
   return (
     <>
       <div className="fixed transition transform delay-100 duration-[2000] top-5 flex w-full flex-col z-10 justify-center items-center">
@@ -25,7 +29,9 @@ const SocialHandlerModal = ({
             }}
             className="hidden md:flex transition duration-300 transform cursor-pointer hover:scale-105 font-bold items-center my-4"
           >
-            <XMarkIcon className="transition delay-75 text-red-600 duration-200 size-10 shadow-lg hover:shadow-red-500 bg-red-400 font-bold" />
+            <XMarkIcon className={clsx("transition delay-75 text-red-600 duration-200 size-10 shadow-lg hover:shadow-red-500 bg-red-400 font-bold", theme === "light" ?
+              `` : ``
+            )} />
           </div>
         </div>
       </div>

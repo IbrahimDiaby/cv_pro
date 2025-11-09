@@ -10,14 +10,17 @@ import Card from "../card/card";
 import InfoCard from "../card/info-card";
 import { Globe, Mail, PhoneCall } from "react-feather";
 import { imagePath } from "../../utils/utilities";
+import { useTheme } from "../../context/themeContext";
 
 const About = () => {
+  const {theme} = useTheme();
+
   const infos = [
     {
       icon: (
         <>
           <PhoneCall
-            className={clsx(`size-16 text-sky-400 dark:text-red-400`)}
+            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
           />
         </>
       ),
@@ -27,7 +30,7 @@ const About = () => {
     {
       icon: (
         <>
-          <Mail className={clsx(`size-16 text-sky-400 dark:text-red-400`)} />
+          <Mail className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")} />
         </>
       ),
       title: "Email",
@@ -36,7 +39,7 @@ const About = () => {
     {
       icon: (
         <>
-          <Globe className={clsx(`size-16 text-sky-400 dark:text-red-400`)} />
+          <Globe className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")} />
         </>
       ),
       title: "Localisation",
@@ -49,7 +52,7 @@ const About = () => {
       icon: (
         <>
           <RocketLaunchIcon
-            className={clsx(`size-16 text-sky-400 dark:text-red-400`)}
+            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
           />
         </>
       ),
@@ -60,7 +63,7 @@ const About = () => {
       icon: (
         <>
           <GlobeAltIcon
-            className={clsx(`size-16 text-sky-400 dark:text-red-400`)}
+            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
           />
         </>
       ),
@@ -71,7 +74,7 @@ const About = () => {
       icon: (
         <>
           <ArrowPathRoundedSquareIcon
-            className={clsx(`size-16 text-sky-400 dark:text-red-400`)}
+            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
           />
         </>
       ),
@@ -82,7 +85,7 @@ const About = () => {
       icon: (
         <>
           <UserGroupIcon
-            className={clsx(`size-16 text-sky-400 dark:text-red-400`)}
+            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
           />
         </>
       ),
@@ -93,13 +96,16 @@ const About = () => {
 
   return (
     <>
-      <section className="flex flex-col lg:flex-row px-10 py-4 w-full min-h-screen">
+      <section className={clsx("flex flex-col lg:flex-row px-10 py-4 w-full min-h-screen", theme === "light" ? "bg-white text-black" : "bg-gray-900 text-white dark:bg-gray-900 dark:text-white")}>
         <div className="flex flex-col lg:flex-row">
           <div className="flex lg:px-4 flex-col order-2 lg:order-0">
             <h1 className="font-bold text-center lg:text-start mb-2 uppercase text-4xl lg:text-8xl">
-              <span className="animate-typing">Ibrahim DIABY</span>
+              {/* <span className="animate-typing typing">Ibrahim DIABY</span> */}
+              <span className="typing">Ibrahim DIABY</span>
             </h1>
-            <h3 className="font-bold text-center lg:text-start mb-2 uppercase text-sky-400 dark:text-red-400 text-2xl lg:text-4xl">
+            <h3 className={clsx("font-bold text-center lg:text-start mb-2 uppercase text-2xl lg:text-4xl",
+              theme === "light" ? "text-sky-400" : "text-red-400 dark:text-red-400"
+            )}>
               <span className="animate-wiggle">Développeur Full-Stack</span>
             </h3>
             <div className="flex flex-col gap-y-4">
@@ -148,14 +154,14 @@ const About = () => {
           </div>
           <div className="flex relative min-w-1/4 order-1 lg:order-0 vh-90 lg:h-170 overflow-y-hidden">
             <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan h-full w-full">
-                  <div className="h-1 w-full bg-sky-400 dark:bg-red-400"></div>
+                  <div className={clsx("h-1 w-full", theme === "light" ? "bg-sky-400" : "bg-red-400 dark:bg-red-400")}></div>
                   <div className="bg-transparent h-full w-full"></div>
             </div>
             <div className="animate_show overflow-y-hidden">
               <img
                 className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square"
                 src={`${imagePath}/p-2.png`}
-                alt=""
+                alt="Profile picture"
                 srcSet={`${imagePath}/p-2.png`}
               />
             </div>

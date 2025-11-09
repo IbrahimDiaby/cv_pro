@@ -64,9 +64,12 @@
 
 @keyframes typing {
   from {
+    /* color: #213547; */
     max-width: 0ch;
+    /* overflow: hidden; */
   }
   to {
+    /* color: green; */
     max-width: 20ch;
   }
 }

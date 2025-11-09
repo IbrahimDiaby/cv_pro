@@ -5,6 +5,8 @@ import TechCard from "../card/tech-card";
 import { useEffect, useMemo, useState } from "react";
 import { AlertTriangle } from "react-feather";
 import Pagination from "../pagination";
+import clsx from "clsx";
+import { useTheme } from "../../context/themeContext";
 
 const Projects = () => {
   const [idx, setIdx] = useState(0);
@@ -217,9 +219,11 @@ const Projects = () => {
     paginationConfig.page,
   ]);
 
+  const {theme} = useTheme();
+
   return (
     <>
-      <section className="flex flex-col text-black dark:text-white">
+      <section className={clsx("flex flex-col", theme === "light" ? "bg-white text-black" : "bg-gray-900 text-white dark:bg-gray-900 dark:text-white")}>
         <div className="py-4 flex flex-col items-center justify-center">
           <h1 className="font-bold uppercase text-4xl lg:text-6xl">Projets</h1>
           <div className="flex w-full justify-center flex-wrap px-10 py-3 gap-2 gap-y-6">
@@ -245,7 +249,7 @@ const Projects = () => {
         <div className="flex flex-col lg:flex-row px-10 w-full items-center justify-center gap-y-6">
           <div className="flex w-full gap-y-4 flex-col lg:gap-0">
             {itemsFiltered.length === 0 && (
-              <div className="flex py-8 text-sky-400 dark:text-red-400 items-center justify-center">
+              <div className={clsx("flex py-8 items-center justify-center", theme === "light" ? "text-sky-400" : "text-red-400 dark:text-red-400")}>
                 <AlertTriangle className="size-6 me-2" />
                 <p className="font-bold">Les projets seront bientôt ajoutés.</p>
               </div>

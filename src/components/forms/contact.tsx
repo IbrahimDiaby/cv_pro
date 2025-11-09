@@ -5,14 +5,15 @@ import { useState, useEffect, useRef } from "react";
 // import NoticationCard from "../notification/card-notify";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
-// import { useTheme } from "../../context/themeContext";
+import clsx from "clsx";
+import { useTheme } from "../../context/themeContext";
 
 const ContactMe = () => {
   const duration = 3000;
   const refreshDelay = 100;
   const env = import.meta.env;
   const formRef = useRef<HTMLFormElement>(null);
-  // const {theme} = useTheme();
+  const {theme} = useTheme();
 
   const templateParams = {
     from_name: "",
@@ -183,13 +184,16 @@ const ContactMe = () => {
   return (
     <>
       {/* {send && <NoticationCard type={"success"} message={"Message envoyé"} />} */}
-      <div className="flex flex-col min-h-screen justify-center items-center text-black dark:text-white">
+      <div className={clsx("flex flex-col min-h-screen justify-center items-center",
+        theme === "light" ? 
+        "bg-white text-black" : "bg-gray-900 text-white dark:bg-gray-900 dark:text-white"
+      )}>
         <form
           ref={formRef}
           onSubmit={(e) => {
             submitHandler(e);
           }}
-          className="flex flex-col w-full lg:w-1/2 px-10 rounded-md justify-center items-center gap-4 text-black dark:text-white"
+          className={clsx("flex flex-col w-full lg:w-1/2 px-10 rounded-md justify-center items-center gap-4", theme === "light" ? "text-black" : "text-white dark:text-white")}
           action=""
           method="post"
         >
@@ -323,7 +327,10 @@ const ContactMe = () => {
 
           <button>
             <div className="flex bg-transparent">
-              <div className="flex transition delay-75 duration-700 hover:scale-105 transform shadow-lg hover:shadow-sky-400 dark:hover:shadow-red-400  font-bold gap-x-4 cursor-pointer rounded-md bg-gradient-to-r from-white/40 via-sky-400 to-white/60 dark:from-black/40 dark:via-red-400/50 dark:to-black/60 uppercase ps-4 pe-2 py-4 bg-transparent">
+              <div className={clsx(`flex transition delay-75 duration-700 hover:scale-105 transform shadow-lg
+                  font-bold gap-x-4 cursor-pointer rounded-md bg-linear-to-r uppercase ps-4 pe-2 py-4 bg-transparent`, 
+                  theme === "light" ? "hover:shadow-sky-400 from-white/40 via-sky-400 to-white/60" : `hover:shadow-red-400 from-black/40 via-red-400/50 
+                  to-black/60 dark:hover:shadow-red-400 dark:from-black/40 dark:via-red-400/50 dark:to-black/60`)}>
                 <span className="flex items-center">
                   Envoyer <PaperAirplaneIcon className="size-8 px-2" />
                 </span>
