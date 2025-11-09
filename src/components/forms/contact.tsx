@@ -217,7 +217,7 @@ const ContactMe = () => {
                 onChange={(e) => {
                   setFirstname(e.target.value);
                 }}
-                className="flex font-bold outline-none rounded-md border-2 focus:border-sky-400 p-2 "
+                              className={clsx("flex font-bold outline-none rounded-md border-2 p-2", theme === "light" ? "focus:border-sky-400  focus:placeholder-sky-400 placeholder-black/40" : "focus:placeholder-red-400 focus:border-red-400  placeholder-white/60 dark:focus:placeholder-white/60 dark:focus:border-red-400  dark:placeholder-red-400/30")}
                 type="text"
                 placeholder="Ibrahim"
                 name="firstname"
@@ -235,7 +235,7 @@ const ContactMe = () => {
                 onChange={(e) => {
                   setLastname(e.target.value);
                 }}
-                className="flex font-bold outline-none rounded-md border-2 focus:border-sky-400 p-2 "
+                             className={clsx("flex font-bold outline-none rounded-md border-2 p-2", theme === "light" ? "focus:border-sky-400  focus:placeholder-sky-400 placeholder-black/40" : "focus:placeholder-red-400 focus:border-red-400  placeholder-white/60 dark:focus:placeholder-white/60 dark:focus:border-red-400  dark:placeholder-red-400/30")}
                 type="text"
                 placeholder="DIABY"
                 name="lastname"
@@ -254,7 +254,7 @@ const ContactMe = () => {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
-              className="flex font-bold outline-none rounded-md border-2 focus:border-sky-400 p-2 "
+                            className={clsx("flex font-bold outline-none rounded-md border-2 p-2", theme === "light" ? "focus:border-sky-400  focus:placeholder-sky-400 placeholder-black/40" : "focus:placeholder-red-400 focus:border-red-400  placeholder-white/60 dark:focus:placeholder-white/60 dark:focus:border-red-400  dark:placeholder-red-400/30")}
               type="email"
               placeholder="contact@gmail.com"
               name="email"
@@ -272,7 +272,7 @@ const ContactMe = () => {
               onChange={(e) => {
                 setTel(e.target.value);
               }}
-              className="flex font-bold outline-none rounded-md border-2 focus:border-sky-400 p-2 "
+                            className={clsx("flex font-bold outline-none rounded-md border-2 p-2", theme === "light" ? "focus:border-sky-400  focus:placeholder-sky-400 placeholder-black/40" : "focus:placeholder-red-400 focus:border-red-400  placeholder-white/60 dark:focus:placeholder-white/60 dark:focus:border-red-400  dark:placeholder-red-400/30")}
               type="tel"
               placeholder="+330701020304"
               name="tel"
@@ -290,7 +290,7 @@ const ContactMe = () => {
               onChange={(e) => {
                 setSubject(e.target.value);
               }}
-              className="flex font-bold outline-none rounded-md border-2 focus:border-sky-400 p-2 "
+              className={clsx("flex font-bold outline-none rounded-md border-2 p-2", theme === "light" ? "focus:border-sky-400  focus:placeholder-sky-400 placeholder-black/40" : "focus:bg-gray-900  focus:placeholder-red-400 focus:border-red-400  placeholder-white/60 dark:focus:placeholder-white/60 dark:focus:border-red-400  dark:placeholder-red-400/30")}
               name="subject"
               id="subject"
               value={subject}
@@ -314,7 +314,7 @@ const ContactMe = () => {
               onChange={(e) => {
                 setMessage(e.target.value);
               }}
-              className="flex font-bold h-30 outline-none rounded-md border-2 focus:border-sky-400 p-2 "
+              className={clsx("flex font-bold h-30 outline-none rounded-md border-2 p-2", theme === "light" ? "focus:border-sky-400  focus:placeholder-sky-400 placeholder-black/40" : "focus:placeholder-red-400 focus:border-red-400  placeholder-white/60 dark:focus:placeholder-white/60 dark:focus:border-red-400  dark:placeholder-red-400/30")}
               placeholder="En quoi pouvons-nous vous aider?"
               name="message"
               id="message"
