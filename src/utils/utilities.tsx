@@ -47,6 +47,10 @@ const imageProjectsPath = window.location.host === "https://ibrahimdiaby.github.
 window.location.host === "ibrahimdiaby.github.io"
 ? "/CV/assets/images/projects/" : "/assets/images/projects/";
 
+const docsPath = window.location.host === "https://ibrahimdiaby.github.io" ||
+window.location.host === "ibrahimdiaby.github.io"
+? "/CV/assets/documents/" : "/assets/documents/";
+
 // const imageFlagsPath = "/assets/images/flags";
 // const imageProgrammingPath = "/assets/images/programming";
 // const imageSocialPath = "/assets/images/social";
@@ -62,7 +66,8 @@ export {
     validateEmail,
     validateUsername,
     validatePassword,
-    imageProjectsPath
+    imageProjectsPath,
+    docsPath
     // imageProjectsPath,
     // imageFlagsPath,
     // imageProgrammingPath,

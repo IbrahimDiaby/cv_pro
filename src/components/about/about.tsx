@@ -8,19 +8,24 @@ import clsx from "clsx";
 import { nanoid } from "nanoid";
 import Card from "../card/card";
 import InfoCard from "../card/info-card";
-import { Globe, Mail, PhoneCall } from "react-feather";
-import { imagePath } from "../../utils/utilities";
+import { Download, Eye, Globe, Mail, PhoneCall } from "react-feather";
+import { docsPath, imagePath } from "../../utils/utilities";
 import { useTheme } from "../../context/themeContext";
 
 const About = () => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
 
   const infos = [
     {
       icon: (
         <>
           <PhoneCall
-            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
+            className={clsx(
+              `size-16`,
+              theme === "light"
+                ? "text-sky-400"
+                : "text-red-400 dark:text-red-400"
+            )}
           />
         </>
       ),
@@ -30,7 +35,14 @@ const About = () => {
     {
       icon: (
         <>
-          <Mail className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")} />
+          <Mail
+            className={clsx(
+              `size-16`,
+              theme === "light"
+                ? "text-sky-400"
+                : "text-red-400 dark:text-red-400"
+            )}
+          />
         </>
       ),
       title: "Email",
@@ -39,7 +51,14 @@ const About = () => {
     {
       icon: (
         <>
-          <Globe className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")} />
+          <Globe
+            className={clsx(
+              `size-16`,
+              theme === "light"
+                ? "text-sky-400"
+                : "text-red-400 dark:text-red-400"
+            )}
+          />
         </>
       ),
       title: "Localisation",
@@ -52,7 +71,12 @@ const About = () => {
       icon: (
         <>
           <RocketLaunchIcon
-            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
+            className={clsx(
+              `size-16`,
+              theme === "light"
+                ? "text-sky-400"
+                : "text-red-400 dark:text-red-400"
+            )}
           />
         </>
       ),
@@ -63,7 +87,12 @@ const About = () => {
       icon: (
         <>
           <GlobeAltIcon
-            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
+            className={clsx(
+              `size-16`,
+              theme === "light"
+                ? "text-sky-400"
+                : "text-red-400 dark:text-red-400"
+            )}
           />
         </>
       ),
@@ -74,7 +103,12 @@ const About = () => {
       icon: (
         <>
           <ArrowPathRoundedSquareIcon
-            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
+            className={clsx(
+              `size-16`,
+              theme === "light"
+                ? "text-sky-400"
+                : "text-red-400 dark:text-red-400"
+            )}
           />
         </>
       ),
@@ -85,7 +119,12 @@ const About = () => {
       icon: (
         <>
           <UserGroupIcon
-            className={clsx(`size-16`, theme === "light" ? "text-sky-400": "text-red-400 dark:text-red-400")}
+            className={clsx(
+              `size-16`,
+              theme === "light"
+                ? "text-sky-400"
+                : "text-red-400 dark:text-red-400"
+            )}
           />
         </>
       ),
@@ -96,16 +135,28 @@ const About = () => {
 
   return (
     <>
-      <section className={clsx("flex flex-col lg:flex-row px-10 py-4 w-full min-h-screen", theme === "light" ? "bg-white text-black" : "bg-gray-900 text-white dark:bg-gray-900 dark:text-white")}>
+      <section
+        className={clsx(
+          "flex flex-col lg:flex-row px-10 py-4 w-full min-h-screen",
+          theme === "light"
+            ? "bg-white text-black"
+            : "bg-gray-900 text-white dark:bg-gray-900 dark:text-white"
+        )}
+      >
         <div className="flex flex-col lg:flex-row">
           <div className="flex lg:px-4 flex-col order-2 lg:order-0">
             <h1 className="font-bold text-center lg:text-start mb-2 uppercase text-4xl lg:text-8xl">
               {/* <span className="animate-typing typing">Ibrahim DIABY</span> */}
               <span className="typing">Ibrahim DIABY</span>
             </h1>
-            <h3 className={clsx("font-bold text-center lg:text-start mb-2 uppercase text-2xl lg:text-4xl",
-              theme === "light" ? "text-sky-400" : "text-red-400 dark:text-red-400"
-            )}>
+            <h3
+              className={clsx(
+                "font-bold text-center lg:text-start mb-2 uppercase text-2xl lg:text-4xl",
+                theme === "light"
+                  ? "text-sky-400"
+                  : "text-red-400 dark:text-red-400"
+              )}
+            >
               <span className="animate-wiggle">Développeur Full-Stack</span>
             </h3>
             <div className="flex flex-col gap-y-4">
@@ -142,6 +193,43 @@ const About = () => {
                 service de vos projets pour vous offrir des solutions sur mesure
               </p>
             </div>
+            <section className="flex py-4 gap-x-4">
+              <a
+              download={"CV-IbrahimDIABY-STAGE2025.pdf"}
+                href={`${docsPath}/CV.pdf`}
+                className={clsx(
+                  `gap-2 items-center justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
+                  theme === "light"
+                    ? "text-sky-400 hover:bg-white/40"
+                    : "bg-black/40 text-red-400 dark:text-red-400 dark:bg-black/40",
+                  `hover:scale-105 ${
+                    theme === "light"
+                      ? "hover:bg-white/40 hover:text-sky-600"
+                      : "hover:text-red-400 hover:bg-black/40 hover:dark:text-red-600 hover:dark:bg-black/40"
+                  }`
+                )}
+              >
+                Télécharger le CV <Download className="size-6 mb-1 " />
+              </a>
+
+              <a
+              target="_blank"
+                href={`${docsPath}CV.pdf`}
+                className={clsx(
+                  `gap-2 items-center justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
+                  theme === "light"
+                    ? "text-sky-400 hover:bg-white/40"
+                    : "bg-black/40 text-red-400 dark:text-red-400 dark:bg-black/40",
+                  `hover:scale-105 ${
+                    theme === "light"
+                      ? "hover:bg-white/40 hover:text-sky-600"
+                      : "hover:text-red-400 hover:bg-black/40 hover:dark:text-red-600 hover:dark:bg-black/40"
+                  }`
+                )}
+              >
+                Visualiser le CV <Eye className="size-6 mb-1 " />
+              </a>
+            </section>
             <section className="flex flex-col lg:flex-row py-4 w-full">
               <div className="flex flex-col">
                 <div className="flex flex-wrap gap-y-4 lg:gap-4">
@@ -154,8 +242,15 @@ const About = () => {
           </div>
           <div className="flex relative min-w-1/3 order-1 lg:order-0 vh-90 lg:h-170 overflow-y-hidden">
             <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan h-full w-full">
-                  <div className={clsx("h-1 w-full", theme === "light" ? "bg-sky-400" : "bg-red-400 dark:bg-red-400")}></div>
-                  <div className="bg-transparent h-full w-full"></div>
+              <div
+                className={clsx(
+                  "h-1 w-full",
+                  theme === "light"
+                    ? "bg-sky-400"
+                    : "bg-red-400 dark:bg-red-400"
+                )}
+              ></div>
+              <div className="bg-transparent h-full w-full"></div>
             </div>
             <div className="animate_show overflow-y-hidden">
               <img
