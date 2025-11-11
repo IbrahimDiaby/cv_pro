@@ -25,15 +25,15 @@
 }
 
 .typing{
-  animation: typing 4s steps(20) 100ms infinite alternate both;
+  animation: typing 3s steps(20) 100ms infinite alternate both;
 }
 
 .animate_scan{
-  animation: scan 6s linear 100ms 1 alternate both;
+  animation: scan 2s linear 100ms 1 alternate both;
 }
 
 .animate_show{
-  animation: show 6s linear 100ms 1 alternate both;
+  animation: show 2s linear 100ms 1 alternate both;
 }
 
 .animate_showMenu{
@@ -41,7 +41,7 @@
 }
 
 .animate_hiddenMenu{
-  animation: hiddenMenu 3s linear 0ms 1 alternate both;
+  animation: hiddenMenu 2s linear 0ms 1 alternate both;
 }
 
 @keyframes scan {

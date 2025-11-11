@@ -152,7 +152,7 @@ const About = () => {
               </div>
             </section>
           </div>
-          <div className="flex relative min-w-1/4 order-1 lg:order-0 vh-90 lg:h-170 overflow-y-hidden">
+          <div className="flex relative min-w-1/3 order-1 lg:order-0 vh-90 lg:h-170 overflow-y-hidden">
             <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan h-full w-full">
                   <div className={clsx("h-1 w-full", theme === "light" ? "bg-sky-400" : "bg-red-400 dark:bg-red-400")}></div>
                   <div className="bg-transparent h-full w-full"></div>
@@ -160,9 +160,9 @@ const About = () => {
             <div className="animate_show overflow-y-hidden">
               <img
                 className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square"
-                src={`${imagePath}/p-2.png`}
+                src={`${imagePath}/profile.jpg`}
                 alt="Profile picture"
-                srcSet={`${imagePath}/p-2.png`}
+                srcSet={`${imagePath}/profile.jpg`}
               />
             </div>
           </div>
