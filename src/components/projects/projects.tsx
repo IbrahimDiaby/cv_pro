@@ -173,6 +173,31 @@ const Projects = () => {
         start: "2023",
         end: "Juin 2024",
       },
+      {
+        image: "edigioweb.png",
+        title: "EdigioWeb",
+        role: "Développeur WordPress",
+        description: `Contribution à divers solutions notamment un site de biens immobiliers (Estate Website : lannoncimmo.com)`,
+        technologies: ["WordPress", "PHP"],
+        tools: ["HOSTINGER"],
+        type: "web",
+        url: "https://edigioweb.com",
+        start: "2023",
+        end: "2024",
+      },
+      {
+        image: "diabyconseil.png",
+        title: "DIABY CONSEIL",
+        role: "Développeur WEB",
+        description: `Espace d'administration dedié securisé.
+        Espace client indépendant de l'espace administration.`,
+        technologies: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
+        tools: ["PLANETHOSTER"],
+        type: "web",
+        url: "https://diabyconseil.fr",
+        start: "2020",
+        end: "2024",
+      }
     ],
     []
   );
@@ -184,7 +209,7 @@ const Projects = () => {
 
   useEffect(() => {
     setItemsFiltered(items.filter((e) => e.type === projectType));
-  }, [items, projectType]);
+  }, [items, itemsFiltered, projectType]);
 
   const [page, setPage] = useState(1);
   const paginationConfig = useMemo(() => {
