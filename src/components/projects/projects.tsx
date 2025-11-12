@@ -14,7 +14,7 @@ const Projects = () => {
   const categories = [
     {
       content: "Web",
-      tag: "web",
+      tag: "website",
     },
     {
       content: "Mobile",
@@ -49,7 +49,7 @@ const Projects = () => {
         ],
         url: "#",
         tools: [],
-        type: "web",
+        type: "website",
         start: "2025",
         end: "2025",
       },
@@ -73,7 +73,7 @@ const Projects = () => {
         ],
         url: "https://amadoudiaby.com",
         tools: ["Filezilla", "LWS"],
-        type: "web",
+        type: "website",
         start: "2025",
         end: "2025",
       },
@@ -93,7 +93,7 @@ const Projects = () => {
         ],
         url: "https://unes-idf.fr",
         tools: ["Filezilla", "IONOS"],
-        type: "web",
+        type: "website",
         start: "2025",
         end: "2025",
       },
@@ -113,7 +113,7 @@ const Projects = () => {
         ],
         url: "https://ameetis.fr",
         tools: ["Filezilla", "IONOS"],
-        type: "web",
+        type: "website",
         start: "2025",
         end: "2025",
       },
@@ -132,7 +132,7 @@ const Projects = () => {
           "Github",
         ],
         tools: ["Filezilla", "IONOS"],
-        type: "web",
+        type: "website",
         url: "https://aess-strasbourg.fr",
         start: "2024",
         end: "2025",
@@ -155,7 +155,7 @@ const Projects = () => {
           "Configuration SMTP",
         ],
         tools: ["Filezilla"],
-        type: "web",
+        type: "website",
         url: "https://ongylla.org",
         start: "2023",
         end: "Juin 2024",
@@ -180,7 +180,7 @@ const Projects = () => {
         description: `Contribution à divers solutions notamment un site de biens immobiliers (Estate Website : lannoncimmo.com)`,
         technologies: ["WordPress", "PHP"],
         tools: ["HOSTINGER"],
-        type: "web",
+        type: "website",
         url: "https://edigioweb.com",
         start: "2023",
         end: "2024",
@@ -193,7 +193,7 @@ const Projects = () => {
         Espace client indépendant de l'espace administration.`,
         technologies: ["HTML", "CSS", "JAVASCRIPT", "PHP"],
         tools: ["PLANETHOSTER"],
-        type: "web",
+        type: "website",
         url: "https://diabyconseil.fr",
         start: "2020",
         end: "2024",
@@ -209,7 +209,7 @@ const Projects = () => {
 
   useEffect(() => {
     setItemsFiltered(items.filter((e) => e.type === projectType));
-  }, [items, itemsFiltered, projectType]);
+  }, [items, projectType]);
 
   const [page, setPage] = useState(1);
   const paginationConfig = useMemo(() => {
