@@ -9,7 +9,7 @@ import { nanoid } from "nanoid";
 import Card from "../card/card";
 import InfoCard from "../card/info-card";
 import { Download, Eye, Globe, Mail, PhoneCall } from "react-feather";
-import { docsPath, imagePath } from "../../utils/utilities";
+import { docsPath, imagePath, scholarshipPath } from "../../utils/utilities";
 import { useTheme } from "../../context/themeContext";
 
 const About = () => {
@@ -149,6 +149,11 @@ const About = () => {
               {/* <span className="animate-typing typing">Ibrahim DIABY</span> */}
               <span className="typing">Ibrahim DIABY</span>
             </h1>
+            <div className="my-2 py-4 flex flex-wrap flex-col items-center justify-center lg:items-start lg:flex-row w-full gap-4 rounded-full">
+              <img className="w-20 h-20 aspect-square" src={`${scholarshipPath}/nanci.png`} alt="NaN CI" title="NaN CI" srcSet={`${scholarshipPath}/nanci.png`} />
+              <img className="w-100 h-20 aspect-square" src={`${scholarshipPath}/unistra.png`} alt="Unistra" title="Unistra" srcSet={`${scholarshipPath}/unistra.png`} />
+              <img className="w-100 h-20 aspect-square" src={`${scholarshipPath}/uspn.png`} alt="USPN" title="USPN" srcSet={`${scholarshipPath}/uspn.png`} />
+            </div>
             <h3
               className={clsx(
                 "font-bold text-center lg:text-start mb-2 uppercase text-2xl lg:text-4xl",
@@ -193,12 +198,12 @@ const About = () => {
                 service de vos projets pour vous offrir des solutions sur mesure
               </p>
             </div>
-            <section className="flex py-4 gap-x-4">
+            <section className="flex flex-col gap-y-4 lg:flex-row lg:gap-y-2 py-4 gap-x-4">
               <a
               download={"CV-IbrahimDIABY-STAGE2025.pdf"}
                 href={`${docsPath}/CV.pdf`}
                 className={clsx(
-                  `gap-2 items-center justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
+                  `gap-2 items-center w-full lg:w-fit justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
                   theme === "light"
                     ? "text-sky-400 hover:bg-white/40"
                     : "bg-black/40 text-red-400 dark:text-red-400 dark:bg-black/40",
@@ -216,7 +221,7 @@ const About = () => {
               target="_blank"
                 href={`${docsPath}CV.pdf`}
                 className={clsx(
-                  `gap-2 items-center justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
+                  `gap-2 items-center w-full lg:w-fit justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
                   theme === "light"
                     ? "text-sky-400 hover:bg-white/40"
                     : "bg-black/40 text-red-400 dark:text-red-400 dark:bg-black/40",
