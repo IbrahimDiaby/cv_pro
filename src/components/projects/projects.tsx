@@ -38,7 +38,7 @@ const Projects = () => {
     () => [
       {
         image: "sygesco.png",
-        title: "SYSGESCO",
+        title: "SYGESCO",
         role: "Développeur Web Fullstack",
         description: `Petit défi d'implémentation de maquette sans framework. Que du pure code "Vanilla" Test de compétence réelle.`,
         technologies: [
