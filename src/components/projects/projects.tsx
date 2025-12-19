@@ -37,6 +37,24 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "social-links-profile.png",
+        title: "Social Links Profile",
+        role: "Développeur Web Fullstack",
+        description: `Petit défi d'implémentation de maquette sans framework. Que du pure code "Vanilla" Test de compétence réelle. Challenge Frontend Mentor`,
+        technologies: [
+          "HTML",
+          "CSS",
+          // "JS",
+          "GIT",
+          "GITHUB (Pages)",
+        ],
+        url: "https://ibrahimdiaby.github.io/social-links-profile-main",
+        tools: [],
+        type: "github",
+        start: "2025",
+        end: "2025",
+      },
+      {
         image: "sygesco.png",
         title: "SYGESCO",
         role: "Développeur Web Fullstack",
