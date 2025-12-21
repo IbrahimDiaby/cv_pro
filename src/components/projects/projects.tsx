@@ -321,6 +321,25 @@ const Projects = () => {
         url: "https://ibrahimdiaby.github.io/willxangel/",
         start: "2019",
         end: "2019",
+      },
+      {
+        image: "pingy-pongy.png",
+        title: "Pingy Pongy Game",
+        role: "Développeur Web",
+        description: `Developpement d'un jeu web avec le framework phaser (concours d'entrée en 1 heure de temps reparti) `,
+        technologies: [
+          "HTML",
+          "CSS",
+          "JS",
+          "PHASER",
+          "GIT",
+          // "GITHUB (Pages)",
+        ],
+        url: "https://github.com/IbrahimDiaby/Pingy-Pongy-Game",
+        tools: [],
+        type: "github",
+        start: "2018",
+        end: "2018",
       }
     ],
     []
