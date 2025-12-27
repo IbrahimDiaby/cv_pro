@@ -37,6 +37,24 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "merry-christmas-2025.png",
+        title: "Merry Christmas 2025",
+        role: "Développeur Web",
+        description: `Merry Christmas 2025`,
+        technologies: [
+          "HTML",
+          "CSS",
+          "JS",
+          "GIT",
+          "GITHUB (Pages)",
+        ],
+        url: "https://ibrahimdiaby.github.io/merry-christmas-2025",
+        tools: [],
+        type: "github",
+        start: "2025",
+        end: "2025",
+      },
+      {
         image: "social-links-profile.png",
         title: "Social Links Profile",
         role: "Développeur Web Fullstack",
