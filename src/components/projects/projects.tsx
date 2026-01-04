@@ -37,6 +37,24 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "happy_new_year_2026.png",
+        title: "Happy New Year 2026",
+        role: "Développeur Web",
+        description: `Happy New Year 2026`,
+        technologies: [
+          "HTML",
+          "CSS",
+          "JS",
+          "GIT",
+          "GITHUB (Pages)",
+        ],
+        url: "https://ibrahimdiaby.github.io/happy_new_year_2026",
+        tools: [],
+        type: "github",
+        start: "2026",
+        end: "2026",
+      },
+      {
         image: "merry-christmas-2025.png",
         title: "Merry Christmas 2025",
         role: "Développeur Web",
