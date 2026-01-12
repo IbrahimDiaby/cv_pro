@@ -31,29 +31,17 @@ const basename =
     ? window.location.origin
     : "http://localhost:5173";
 
-const membersPath = window.location.host === "https://ibrahimdiaby.github.io" ||
-window.location.host === "ibrahimdiaby.github.io"
-? "/CV/assets/images/members" : "/assets/images/members" ;
+const membersPath = "/CV/assets/images/members";
 
-const carouselPath = window.location.host === "https://ibrahimdiaby.github.io" ||
-window.location.host === "ibrahimdiaby.github.io"
-? "/CV/assets/images/" : "/assets/images/";
+const carouselPath = "/CV/assets/images/";
 
-const imagePath = window.location.host === "https://ibrahimdiaby.github.io" ||
-window.location.host === "ibrahimdiaby.github.io"
-? "/CV/assets/images/" : "/assets/images/";
+const imagePath = "/CV/assets/images/";
 
-const imageProjectsPath = window.location.host === "https://ibrahimdiaby.github.io" ||
-window.location.host === "ibrahimdiaby.github.io"
-? "/CV/assets/images/projects/" : "/assets/images/projects/";
+const imageProjectsPath = "/CV/assets/images/projects/";
 
-const docsPath = window.location.host === "https://ibrahimdiaby.github.io" ||
-window.location.host === "ibrahimdiaby.github.io"
-? "/CV/assets/documents/" : "/assets/documents/";
+const docsPath = "/CV/assets/documents/";
 
-const scholarshipPath = window.location.host === "https://ibrahimdiaby.github.io" ||
-window.location.host === "ibrahimdiaby.github.io"
-? "/CV/assets/images/" : "/assets/images/";
+const scholarshipPath = "/CV/assets/images/";
 
 // const imageFlagsPath = "/assets/images/flags";
 // const imageProgrammingPath = "/assets/images/programming";

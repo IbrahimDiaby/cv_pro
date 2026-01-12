@@ -11,9 +11,24 @@ import InfoCard from "../card/info-card";
 import { Download, Eye, Globe, Mail, PhoneCall } from "react-feather";
 import { docsPath, imagePath, scholarshipPath } from "../../utils/utilities";
 import { useTheme } from "../../context/themeContext";
+// import { myObserver } from "../../utils/observer.ts";
+// import { useEffect } from "react";
 
 const About = () => {
   const { theme } = useTheme();
+  // const scholarshipList = document.querySelectorAll(".scholarship img");
+  // myObserver.className = "scaler";
+  //   useEffect(() => {
+  //     scholarshipList.forEach((entry) => {
+  //       myObserver.observer.observe(entry);
+  //     });
+
+  //     return () => {
+  //       scholarshipList.forEach((entry) => {
+  //         myObserver.observer.unobserve(entry);
+  //       });
+  //     };
+  //   }, [scholarshipList]);
 
   const infos = [
     {
@@ -149,10 +164,28 @@ const About = () => {
               {/* <span className="animate-typing typing">Ibrahim DIABY</span> */}
               <span className="typing">Ibrahim DIABY</span>
             </h1>
-            <div className="my-2 py-4 flex flex-wrap flex-col items-center justify-center lg:items-start lg:flex-row w-full gap-4 rounded-full">
-              <img className="w-20 h-20 aspect-square" src={`${scholarshipPath}/nanci.png`} alt="NaN CI" title="NaN CI" srcSet={`${scholarshipPath}/nanci.png`} />
-              <img className="w-100 h-20 aspect-square" src={`${scholarshipPath}/unistra.png`} alt="Unistra" title="Unistra" srcSet={`${scholarshipPath}/unistra.png`} />
-              <img className="w-100 h-20 aspect-square" src={`${scholarshipPath}/uspn.png`} alt="USPN" title="USPN" srcSet={`${scholarshipPath}/uspn.png`} />
+            <div className="scholarship my-2 py-4 flex flex-wrap flex-col items-center justify-center lg:items-start lg:flex-row w-full gap-4 rounded-full">
+              <img
+                className="w-20 h-20 aspect-square"
+                src={`${scholarshipPath}/nanci.png`}
+                alt="NaN CI"
+                title="NaN CI"
+                srcSet={`${scholarshipPath}/nanci.png`}
+              />
+              <img
+                className="w-100 h-20 aspect-square"
+                src={`${scholarshipPath}/unistra.png`}
+                alt="Unistra"
+                title="Unistra"
+                srcSet={`${scholarshipPath}/unistra.png`}
+              />
+              <img
+                className="w-100 h-20 aspect-square"
+                src={`${scholarshipPath}/uspn.png`}
+                alt="USPN"
+                title="USPN"
+                srcSet={`${scholarshipPath}/uspn.png`}
+              />
             </div>
             <h3
               className={clsx(
@@ -200,7 +233,7 @@ const About = () => {
             </div>
             <section className="flex flex-col gap-y-4 lg:flex-row lg:gap-y-2 py-4 gap-x-4">
               <a
-              download={"CV-IbrahimDIABY-STAGE2025.pdf"}
+                download={"CV-IbrahimDIABY-STAGE2025.pdf"}
                 href={`${docsPath}/CV.pdf`}
                 className={clsx(
                   `gap-2 items-center w-full lg:w-fit justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
@@ -218,7 +251,7 @@ const About = () => {
               </a>
 
               <a
-              target="_blank"
+                target="_blank"
                 href={`${docsPath}CV.pdf`}
                 className={clsx(
                   `gap-2 items-center w-full lg:w-fit justify-center transition delay-75 duration-1000 flex font-bold cursor-pointer capitalize px-4 py-2 border-2 rounded-md`,
@@ -234,6 +267,17 @@ const About = () => {
               >
                 Visualiser le CV <Eye className="size-6 mb-1 " />
               </a>
+              <a
+                target="_blank"
+                href={`https://www.salesforce.com/trailblazer/a0gomi43u6jfeawehh`}>
+                <img
+                  className="w-40 h-15 aspect-square cursor-pointer"
+                  src={`${scholarshipPath}/salesforce.png`}
+                  alt="Salesforce Profile"
+                  title="Salesforce Profile"
+                  srcSet={`${scholarshipPath}/salesforce.png`}
+                  />
+                </a>
             </section>
             <section className="flex flex-col lg:flex-row py-4 w-full">
               <div className="flex flex-col">
@@ -257,13 +301,15 @@ const About = () => {
               ></div>
               <div className="bg-transparent h-full w-full"></div>
             </div>
-            <div className="animate_show overflow-y-hidden">
-              <img
-                className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square"
-                src={`${imagePath}/profile.jpg`}
-                alt="Profile picture"
-                srcSet={`${imagePath}/profile.jpg`}
-              />
+            <div className="flex flex-col">
+              <div className="animate_show overflow-y-hidden">
+                <img
+                  className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square"
+                  src={`${imagePath}/profile.jpg`}
+                  alt="Profile picture"
+                  srcSet={`${imagePath}/profile.jpg`}
+                />
+              </div>
             </div>
           </div>
         </div>

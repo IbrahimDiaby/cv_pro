@@ -37,6 +37,25 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "memory_can_2025.png",
+        title: "memory_can_2025",
+        role: "Développeur Web",
+        description: `Hommage CAN Maroc 2025`,
+        technologies: [
+          "Angular",
+          "Typescript",
+          "CSS (Vanilla CSS)",
+          "TailwindCSS",
+          "GIT",
+          "GITHUB (Pages)",
+        ],
+        url: "https://github.com/IbrahimDiaby/CIV_CAN_2025",
+        tools: [],
+        type: "github",
+        start: "2026",
+        end: "2026",
+      },
+      {
         image: "happy_new_year_2026.png",
         title: "Happy New Year 2026",
         role: "Développeur Web",

@@ -1,12 +1,12 @@
 const options = {
     rootMargin: "0px 0px",
-    root: document.querySelector("#root"),
+    // root: document.querySelector("#root"),
     scrollMargin: "0px",
     threshold: 0
 }
 
 export const myObserver = {
-    className : "visible",
+    className : "",
     observer : new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
