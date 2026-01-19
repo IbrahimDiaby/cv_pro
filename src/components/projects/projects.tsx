@@ -37,8 +37,26 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "holisticsdeveloppement.png",
+        title: "Holistic Developpement",
+        role: "Développeur Web",
+        description:
+          "Conception d'un site vitrine pour la structure de développement durable Holistic Developpement",
+        technologies: [
+          "HTML",
+          "CSS",
+          "Javascript",
+          "PHP",
+        ],
+        url: "https://holisticsdeveloppement.fr",
+        tools: ["OVH"],
+        type: "website",
+        start: "2026",
+        end: "2026",
+      },
+      {
         image: "memory_can_2025.png",
-        title: "memory_can_2025",
+        title: "Memory CAN 2025",
         role: "Développeur Web",
         description: `Hommage CAN Maroc 2025`,
         technologies: [
