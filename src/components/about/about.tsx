@@ -267,17 +267,20 @@ const About = () => {
               >
                 Visualiser le CV <Eye className="size-6 mb-1 " />
               </a>
-              <a
+              <div className="flex items-center justify-center ">
+                <a
+                className="w-50 h-20 lg:w-40 lg:h-15"
                 target="_blank"
                 href={`https://www.salesforce.com/trailblazer/a0gomi43u6jfeawehh`}>
                 <img
-                  className="w-40 h-15 aspect-square cursor-pointer"
+                  className="w-full h-full aspect-square cursor-pointer"
                   src={`${scholarshipPath}/salesforce.png`}
                   alt="Salesforce Profile"
                   title="Salesforce Profile"
                   srcSet={`${scholarshipPath}/salesforce.png`}
                   />
                 </a>
+              </div>
             </section>
             <section className="flex flex-col lg:flex-row py-4 w-full">
               <div className="flex flex-col">
