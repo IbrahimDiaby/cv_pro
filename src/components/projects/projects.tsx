@@ -47,7 +47,7 @@ const Projects = () => {
           "JavaScript",
           "PHP"
         ],
-        url: "https://github.com/IbrahimDiaby/",
+        url: "https://github.com/IbrahimDiaby/MasterHoroscope",
         tools: [],
         type: "github",
         start: "2026",
@@ -98,7 +98,7 @@ const Projects = () => {
         technologies: [
           "HTML",
           "CSS",
-          "JS",
+          "JavaScript",
           "GIT",
           "GITHUB (Pages)",
         ],
@@ -116,7 +116,7 @@ const Projects = () => {
         technologies: [
           "HTML",
           "CSS",
-          "JS",
+          "JavaScript",
           "GIT",
           "GITHUB (Pages)",
         ],
@@ -134,7 +134,7 @@ const Projects = () => {
         technologies: [
           "HTML",
           "CSS",
-          // "JS",
+          // "JavaScript",
           "GIT",
           "GITHUB (Pages)",
         ],
@@ -152,7 +152,7 @@ const Projects = () => {
         technologies: [
           "HTML",
           "CSS",
-          "JS",
+          "JavaScript",
           "GIT",
           "GITHUB (Pages)",
         ],
@@ -420,7 +420,7 @@ const Projects = () => {
         technologies: [
           "HTML",
           "CSS",
-          "JS",
+          "JavaScript",
           "PHASER",
           "GIT",
           // "GITHUB (Pages)",
