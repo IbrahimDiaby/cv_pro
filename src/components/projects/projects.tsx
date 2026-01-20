@@ -37,6 +37,23 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "horoscope.png",
+        title: "Horoscope",
+        role: "Développeur Web",
+        description: `Ceci n'est pas réellement un horoscope mais une identification de votre signe astrologique et votre élément.`,
+        technologies: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "PHP"
+        ],
+        url: "https://github.com/IbrahimDiaby/",
+        tools: [],
+        type: "github",
+        start: "2026",
+        end: "2026",
+      },
+      {
         image: "holisticsdeveloppement.png",
         title: "Holistic Developpement",
         role: "Développeur Web",
