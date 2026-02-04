@@ -37,6 +37,38 @@ const Projects = () => {
   const items: Array<ProjectInterface> = useMemo<Array<ProjectInterface>>(
     () => [
       {
+        image: "music-player.png",
+        title: "Music Player",
+        role: "Développeur Web",
+        description: `Ceci n'est qu'un side fun project.`,
+        technologies: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+        ],
+        url: "https://ibrahimdiaby.github.io/music-player",
+        tools: [],
+        type: "github",
+        start: "2026",
+        end: "2026",
+      },
+      {
+        image: "live-preview.png",
+        title: "Live Preview",
+        role: "Développeur Web",
+        description: `Ceci n'est qu'un ... projet.`,
+        technologies: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+        ],
+        url: "https://github.com/IbrahimDiaby/LivePreview",
+        tools: [],
+        type: "github",
+        start: "2026",
+        end: "2026",
+      },
+      {
         image: "horoscope.png",
         title: "Horoscope",
         role: "Développeur Web",
