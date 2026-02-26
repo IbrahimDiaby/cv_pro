@@ -161,8 +161,9 @@ const About = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="flex lg:px-4 flex-col order-2 lg:order-0">
             <h1 className="font-bold text-center lg:text-start mb-2 uppercase text-4xl lg:text-8xl">
-              {/* <span className="animate-typing typing">Ibrahim DIABY</span> */}
-              <span className="typing">Ibrahim DIABY</span>
+              <div className="flex items-center justify-center lg:items-start lg:justify-normal">
+                <div className="typing">Ibrahim DIABY</div>
+              </div>
             </h1>
             <div className="scholarship my-2 py-4 flex flex-wrap flex-col items-center justify-center lg:items-start lg:flex-row w-full gap-4 rounded-full">
               <img
@@ -293,7 +294,7 @@ const About = () => {
             </section>
           </div>
           <div className="flex relative min-w-1/3 order-1 lg:order-0 vh-90 lg:h-170 overflow-y-hidden">
-            <div className="hidden md:flex flex-col absolute top-0 z-10 animate_scan h-full w-full">
+            <div className="hidden md:flex flex-col absolute top-0 z-10 animate-scan h-full w-full">
               <div
                 className={clsx(
                   "h-1 w-full",
@@ -304,8 +305,8 @@ const About = () => {
               ></div>
               <div className="bg-transparent h-full w-full"></div>
             </div>
-            <div className="flex flex-col">
-              <div className="animate_show overflow-y-hidden">
+            <div className="animate-slide-in flex flex-col">
+              <div className="animate-profile-pic overflow-y-hidden">
                 <img
                   className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square"
                   src={`${imagePath}/profile.jpg`}

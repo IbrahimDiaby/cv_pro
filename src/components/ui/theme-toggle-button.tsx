@@ -16,7 +16,7 @@ const ThemeToggleButton = () => {
           theme === 'dark' ? 'translate-x-7 dark:bg-gray-800 dark:outline-red-500 bg-gray-800 outline-red-500' : 'translate-x-0 bg-white outline-blue-500'
         }`}
       >
-        {theme === 'light' ? '🌙' : '☀️'}
+        {theme === 'light' ? '☽' : '☀️'}
       </span>
     </button>
   );

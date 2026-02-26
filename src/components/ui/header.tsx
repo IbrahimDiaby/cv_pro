@@ -113,11 +113,11 @@ import { useTheme } from "../../context/themeContext";
                 key={nanoid()}
                 className="flex cursor-pointer items-center gap-x-2 list-none hover:animate-bounce"
               >
-                {((visibility === "hide") || (visibility === "init"))&& <Menu className="flex lg:hidden size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
+                {((visibility === "hide") || (visibility === "init")) && <Menu className="flex lg:hidden size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
                 {visibility === "show" && <XMarkIcon className="flex lg:hidden size-10 hover:text-sky-400 hover:dark:text-red-400/20" />}
               </li>
             </div>
-            <div className={clsx(`px-8 items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1`, theme === "light" ? "bg-white lg:bg-transparent" : "bg-gray-900 lg:bg-transparent dark:bg-gray-900 dark:lg:bg-transparent", visibility === "show" ? "animate_showMenu lg:animate-none" : (visibility === "hide") ? "animate_hiddenMenu lg:animate-none" : "transform -translate-y-[150%] lg:translate-none")}>
+            <div className={clsx(`z-100 px-8 items-end justify-end absolute py-2 left-0 top-24 w-screen h-auto gap-y-4 flex flex-col lg:w-full lg:relative lg:items-end lg:justify-end lg:top-0 lg:flex-row lg:gap-x-1`, theme === "light" ? "bg-white lg:bg-transparent" : "bg-gray-900 lg:bg-transparent dark:bg-gray-900 dark:lg:bg-transparent", visibility === "show" ? "animate-expand lg:animate-none" : (visibility === "hide") ? "animate-shrink lg:animate-none" : "")}>
               {social.map((item) => {
                 return (
                   <li

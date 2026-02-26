@@ -1,18 +1,6 @@
-@tailwind utilities;
 @import "tailwindcss";
-/* @import "@tailwindcss/preflight"; */
-/* @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap'); */
 
-
-/* .doto-font {
-  font-family: "Doto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-  font-variation-settings: "ROND" 0;
-} */
-
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -38,140 +26,142 @@
   }
 }
 
-/* .doto{
-  font-family: "Doto", sans-serif;
-} */
-
 .typing {
-  animation: typing 3s steps(20) 100ms infinite alternate both;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid currentColor;
+  animation: typing 3s steps(20) infinite alternate;
 }
 
-.animate_scan {
-  animation: scan 2s linear 100ms 1 alternate both;
+@keyframes typing {
+  from { max-width: 0ch; }
+  to   { max-width: 20ch; }
 }
 
-.animate_show {
-  animation: show 2s linear 100ms 1 alternate both;
-}
-
-.animate_showMenu {
-  animation: showMenu 2s linear 0ms 1 alternate both;
-}
-
-.animate_hiddenMenu {
-  animation: hiddenMenu 2s linear 0ms 1 alternate both;
+.animate-scan {
+  animation: scan 2s linear forwards;
 }
 
 @keyframes scan {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+.animate-expand {
+  overflow: hidden;
+  animation: expand 0.4s ease forwards;
+}
+
+@keyframes expand {
+  from { max-height: 0; opacity: 0; }
+  to   { max-height: 500px; opacity: 1; }
+}
+
+.animate-shrink {
+  overflow: hidden;
+  animation: shrink 0.4s ease forwards;
+}
+
+@keyframes shrink {
+  from   { max-height: 500px; opacity: 1; }
+  to { max-height: 0; opacity: 0; }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease forwards;
+}
+
+.animate-slide-out {
+  animation: slideOut 0.4s ease forwards;
+}
+
+@keyframes slideIn {
   from {
-    transform: translateY(0px);
+    opacity: 0;
+    transform: translateY(-40px);
   }
   to {
-    transform: translateY(100%);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes show {
+@keyframes slideOut {
   from {
-    height: 0px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+.animate-profile-pic {
+  animation: profilePic 2s linear forwards;
+}
+
+@keyframes profilePic {
+  from {
+    height: 0;
   }
   to {
     height: 100%;
   }
 }
 
-@keyframes typing {
-  from {
-    /* color: #213547; */
-    max-width: 0ch;
-    /* overflow: hidden; */
-  }
-  to {
-    /* color: green; */
-    max-width: 20ch;
-  }
+.animate-scale-in {
+  animation: scaleIn 0.3s ease forwards;
 }
 
-/* max-lg: in TailwindCSS */
-@media screen and (max-width: 1023px) {
-  @keyframes showMenu {
-    from {
-      z-index: 10;
-      max-height: max-content;
-      transform: translateY(-100%);
-    }
-    to {
-      z-index: 10;
-      transform: translateY(0%);
-      max-height: max-content;
-    }
-  }
-
-  @keyframes hiddenMenu {
-    from {
-      display: flex;
-      justify-content: end;
-      align-items: end;
-      z-index: 10;
-      max-height: max-content;
-      transform: translateY(0%);
-    }
-    to {
-      display: flex;
-      justify-content: end;
-      align-items: end;
-      z-index: 10;
-      max-height: max-content;
-      transform: translateY(-150%);
-    }
-  }
-}
-
-.visible {
-  animation: visible 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms 1 alternate
-    both;
-}
-
-.hidden {
-  animation: visible 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms 1 alternate
-    both;
-}
-
-.scaler {
-  animation: scaler 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0ms 1 alternate
-    both;
-}
-
-@keyframes visible {
+@keyframes scaleIn {
   from {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes hidden {
-  from {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scaler {
-  from {
-    /* opacity: 0; */
-    transform: scale(0);
-  }
-  to {
-    /* opacity: 1; */
     transform: scale(1);
   }
 }
 
+@media (max-width: 1023px) {
+
+  .animate-menu-in {
+    animation: menuIn 0.3s ease forwards;
+  }
+
+  .animate-menu-out {
+    animation: menuOut 0.3s ease forwards;
+  }
+
+  @keyframes menuIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes menuOut {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+}
+
+.animate-slide-in,
+.animate-slide-out,
+.animate-scale-in,
+.animate-menu-in,
+.animate-menu-out {
+  will-change: transform, opacity;
+}
