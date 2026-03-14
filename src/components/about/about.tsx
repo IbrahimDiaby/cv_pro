@@ -308,10 +308,10 @@ const About = () => {
             <div className="animate-slide-in flex flex-col">
               <div className="animate-profile-pic overflow-y-hidden">
                 <img
-                  className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square"
-                  src={`${imagePath}/profile.jpg`}
+                  className="rounded-md mb-4 lg:mb-0 w-full vh-90 lg:h-170 aspect-square object-cover"
+                  src={`${imagePath}/me.jpg`}
                   alt="Profile picture"
-                  srcSet={`${imagePath}/profile.jpg`}
+                  srcSet={`${imagePath}/me.jpg`}
                 />
               </div>
             </div>
